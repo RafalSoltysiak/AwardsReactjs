@@ -5,7 +5,7 @@ import RoundedCorners from "./RoundedCorners";
 import Button from "./Button";
 
 export default function Story() {
-  const frameRef = useRef("null");
+  const frameRef = useRef<HTMLImageElement | null>(null);
 
   function handleMouseLeave() {
     const element = frameRef.current;
@@ -17,7 +17,7 @@ export default function Story() {
     });
   }
 
-  function handleMouseMove(e) {
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const { clientX, clientY } = e;
     const element = frameRef.current;
 
@@ -52,7 +52,6 @@ export default function Story() {
         <div className="relative size-full">
           <AnimatedTitle
             title="The st<b>o</b>ry of <br /> a hidden real<b>m</b>"
-            sectionId="#story"
             containerClass="mt-5 pointer-events-none mix-blend-difference relative z-10"
           />
           <div className="story-img-container">

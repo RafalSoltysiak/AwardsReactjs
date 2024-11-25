@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 import { AnimatedTitleProps } from "../types";
-import gsap from "gsap";
 
 export default function AnimatedTitle({
   title,

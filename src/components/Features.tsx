@@ -1,12 +1,13 @@
-import { TiLocationArrow } from "react-icons/ti";
-import { BentoCardProps, BentoTiltProps } from "../types";
 import { useRef, useState } from "react";
+import { TiLocationArrow } from "react-icons/ti";
+
+import { BentoCardProps, BentoTiltProps } from "../types";
 
 const BentoTilt = function ({ children, className = "" }: BentoTiltProps) {
   const [transformStyle, setTransformStyle] = useState("");
-  const itemRef = useRef<HTMLDivElement>();
+  const itemRef = useRef<HTMLDivElement | null>(null);
 
-  function handleMouseMove(e) {
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     if (!itemRef.current) return;
 
     const { left, top, width, height } =
